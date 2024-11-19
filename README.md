@@ -77,12 +77,10 @@
 ### Código
 - Línea de código: `` `código` ``
 - Bloque de código:
-  ```markdown
   ```html
   <html>
     <head></head>
   </html>
-  ```
   ```
 
 ### Enlaces e Imágenes
