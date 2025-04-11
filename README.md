@@ -227,3 +227,254 @@ Los **formularios** permiten interactuar con los usuarios y transmitir informaci
   <button type="reset">Restablecer</button>
 </form>
 ```	
+
+# CSS: Propiedades, Selectores y Diseño Responsive
+
+## CSS: Propiedades Básicas
+
+Las propiedades básicas de CSS nos permiten dar estilo y formato a los elementos HTML. A continuación, te explico las más comunes:
+
+```css
+/* Cambia el color del texto */
+color: red;
+
+/* Cambia el color de fondo del elemento */
+background-color: yellow;
+
+/* Define el tamaño del texto */
+font-size: 16px; /* Puede usar px, em, rem, %, etc. */
+
+/* Define el tipo de letra */
+font-family: Arial, sans-serif;
+
+/* Grosor del texto */
+font-weight: bold; /* También puede ser normal, lighter, o valores numéricos como 400, 700 */
+
+/* Estilo del texto */
+font-style: italic; /* También puede ser normal, oblique */
+
+/* Alineación del texto */
+text-align: center; /* También puede ser left, right, justify */
+
+/* Espaciado interno: espacio entre el borde y el contenido */
+padding: 10px; /* Puede especificarse para cada lado: padding-top, padding-right, etc. */
+
+/* Espaciado externo: espacio entre el borde y otros elementos */
+margin: 15px; /* Igual que padding, puede ir por lados o usar la propiedad global */
+
+/* Borde del elemento */
+border: 1px solid black; /* Grosor | estilo | color */
+
+/* Ancho y alto del elemento */
+width: 200px;
+height: 100px;
+
+/* Oculta el elemento (no ocupa espacio) */
+display: none;
+
+/* Muestra el elemento como bloque (ocupa todo el ancho disponible) */
+display: block;
+
+/* Muestra el elemento en línea (dentro de la misma línea) */
+display: inline;
+
+/* Hace que el elemento flote a un lado (izquierda o derecha) */
+float: left;
+
+/* Posición del elemento: relativa, absoluta, fija o sticky */
+position: relative;
+
+/* Añade sombra a la caja */
+box-shadow: 2px 2px 5px gray;
+
+/* Redondea las esquinas del elemento */
+border-radius: 10px;
+
+/* Espaciado entre letras */
+letter-spacing: 1px;
+
+/* Espaciado entre líneas de texto */
+line-height: 1.5;
+
+/* Opacidad del elemento (0 = invisible, 1 = visible) */
+opacity: 0.8;
+```
+
+## CSS: Selectores
+
+### Selectores Básicos
+
+```css
+p {
+  color: blue;
+}
+
+.titulo {
+  font-size: 24px;
+  color: green;
+}
+
+#especial {
+  background-color: lightgray;
+}
+
+* {
+  font-family: sans-serif;
+}
+```
+
+### Selectores Combinados
+
+```css
+div p {
+  color: purple;
+}
+
+div > p {
+  font-weight: bold;
+}
+
+h2 + p {
+  color: orange;
+}
+```
+
+### Pseudoclases
+
+```css
+a:hover {
+  color: red;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:active {
+  font-weight: bold;
+}
+
+li:first-child {
+  color: blue;
+}
+```
+
+### Pseudoelementos
+
+```css
+p::first-letter {
+  font-size: 2em;
+  color: red;
+}
+
+p::first-line {
+  font-weight: bold;
+}
+
+h1::before {
+  content: "👉 ";
+}
+```
+
+### Selectores de Atributo
+
+```css
+img[alt] {
+  border: 2px dashed red;
+}
+
+a[href="https://google.com"] {
+  color: green;
+}
+```
+
+## CSS: Diseño Responsive
+
+### Meta Viewport
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+### Media Queries
+
+```css
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .column {
+    width: 50%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  p {
+    font-size: 14px;
+  }
+}
+```
+
+### Orientación del dispositivo
+
+```css
+@media (orientation: landscape) {
+  body {
+    background-color: lightgreen;
+  }
+}
+```
+
+### Mobile First
+
+```css
+.container {
+  width: 100%;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 80%;
+    font-size: 16px;
+  }
+}
+```
+
+### Unidades recomendadas
+
+- `em`, `rem`: relativas al tamaño de fuente.
+- `%`: relativo al contenedor.
+- `vh`, `vw`: porcentaje del alto/ancho de la ventana.
+
+### Ejemplo completo
+
+```css
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  background-color: white;
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+```
+
